@@ -5,80 +5,286 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy – Fink Personal</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: #1a1a2e;
+            background: #fafafa;
+            padding: 0;
+        }
+        nav {
+            background: #1a1a2e;
+            padding: 12px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        nav a.active {
+            background: #4a6cf7;
+        }
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            padding: 40px 24px 60px;
         }
         h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
             color: #1a1a2e;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
+        }
+        .effective-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 32px;
         }
         h2 {
+            font-size: 20px;
+            margin-top: 32px;
+            margin-bottom: 16px;
             color: #1a1a2e;
-            margin-top: 30px;
+            border-bottom: 2px solid #4a6cf7;
+            padding-bottom: 8px;
         }
-        ul {
-            padding-left: 20px;
+        h3 {
+            font-size: 16px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        p {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
         }
         li {
             margin-bottom: 8px;
         }
-        .contact {
-            background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 30px;
+        .controller-box {
+            background: #f0f4ff;
+            border-left: 4px solid #4a6cf7;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
         }
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
+        .controller-box strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .footer-note {
+            margin-top: 48px;
+            padding-top: 24px;
             border-top: 1px solid #ddd;
-            font-size: 14px;
+            font-size: 13px;
             color: #666;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            h2 { font-size: 18px; }
+            nav { flex-direction: column; align-items: center; gap: 8px; }
         }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy – Fink Personal</h1>
-    
-    <p>Fink Personal rispetta la privacy degli utenti e tratta i dati personali in conformità alle normative vigenti, incluso il Regolamento UE 2016/679 (GDPR).</p>
+    <nav>
+        <a href="/fink-personal-privacy/" class="active">Privacy Policy</a>
+        <a href="/fink-personal-privacy/terms.html">Termini di utilizzo</a>
+    </nav>
 
-    <h2>Tipologie di dati raccolti</h2>
-    <p>L'app può raccogliere dati di registrazione (come email o numero di telefono) necessari per l'autenticazione dell'utente.</p>
-    <p>I dati finanziari visualizzati tramite servizi di open banking sono utilizzati esclusivamente per fornire le funzionalità dell'app e sono accessibili in modalità di sola lettura.</p>
+    <div class="container">
+        <h1>Informativa Privacy – Fink Personal</h1>
+        <p class="effective-date">Ultimo aggiornamento: Gennaio 2026 – Versione: 2026-01</p>
 
-    <h2>Finalità del trattamento</h2>
-    <p>I dati vengono utilizzati per:</p>
-    <ul>
-        <li>consentire l'accesso all'app</li>
-        <li>fornire funzionalità di gestione finanziaria</li>
-        <li>migliorare la sicurezza e prevenire accessi non autorizzati</li>
-    </ul>
+        <div class="controller-box">
+            <strong>Titolare del trattamento dei dati:</strong>
+            CARLO UVA, nato a Trani il 20/06/1982<br>
+            Via San Luca 16, Trani (BT), Italia<br>
+            Email: <a href="mailto:uva.carlo@libero.it">uva.carlo@libero.it</a><br>
+            PEC: <a href="mailto:carlouva@legalmail.it">carlouva@legalmail.it</a>
+        </div>
 
-    <h2>Conservazione dei dati</h2>
-    <p>I dati sono conservati solo per il tempo necessario alle finalità per cui sono raccolti.</p>
+        <h2>1. Ambito di applicazione</h2>
+        <p>La presente Informativa sulla Privacy descrive le modalità di raccolta, utilizzo, conservazione e protezione dei dati personali degli utenti che utilizzano l'applicazione mobile "Fink Personal" (di seguito "App" o "Servizio"). L'Informativa si applica a tutti i servizi offerti tramite l'App, incluse le funzionalità gratuite e premium.</p>
 
-    <h2>Condivisione dei dati</h2>
-    <p>I dati non vengono venduti né condivisi con terze parti per finalità commerciali.</p>
+        <h2>2. Definizioni</h2>
+        <ul>
+            <li><strong>Dati personali:</strong> qualsiasi informazione riguardante una persona fisica identificata o identificabile.</li>
+            <li><strong>Trattamento:</strong> qualsiasi operazione o insieme di operazioni compiute su dati personali, con o senza l'ausilio di processi automatizzati.</li>
+            <li><strong>Titolare del trattamento:</strong> la persona fisica o giuridica che determina le finalità e i mezzi del trattamento di dati personali.</li>
+            <li><strong>Responsabile del trattamento:</strong> la persona fisica o giuridica che tratta dati personali per conto del Titolare.</li>
+            <li><strong>Interessato:</strong> la persona fisica a cui si riferiscono i dati personali.</li>
+            <li><strong>Consenso:</strong> qualsiasi manifestazione di volontà libera, specifica, informata e inequivocabile dell'interessato.</li>
+        </ul>
 
-    <h2>Sicurezza</h2>
-    <p>Adottiamo misure di sicurezza tecniche e organizzative adeguate per proteggere i dati degli utenti.</p>
+        <h2>3. Dati trattati</h2>
+        
+        <h3>3.1 Dati di account e identificazione</h3>
+        <p>Raccogliamo i seguenti dati per la creazione e gestione dell'account:</p>
+        <ul>
+            <li>Nome e cognome</li>
+            <li>Anno o data di nascita</li>
+            <li>Genere/sesso (campo opzionale)</li>
+            <li>Residenza fiscale (paese)</li>
+            <li>Indirizzo email</li>
+            <li>Numero di telefono</li>
+        </ul>
 
-    <div class="contact">
-        <h2>Contatti</h2>
-        <p>Per informazioni sulla privacy è possibile contattare:<br>
-        <strong>privacy@finkpersonal.app</strong></p>
-    </div>
+        <h3>3.2 Credenziali di accesso</h3>
+        <p>Le credenziali di autenticazione sono gestite tramite Firebase Authentication di Google. Non memorizziamo mai password in chiaro nei nostri sistemi.</p>
 
-    <div class="footer">
-        <p>Ultimo aggiornamento: Gennaio 2026</p>
-        <p>© 2026 Fink Personal. Tutti i diritti riservati.</p>
+        <h3>3.3 Dati finanziari</h3>
+        <p>L'utente può inserire volontariamente dati finanziari, tra cui:</p>
+        <ul>
+            <li>Spese e entrate</li>
+            <li>Budget e obiettivi finanziari</li>
+            <li>Note e descrizioni delle transazioni</li>
+            <li>Dati ottenuti da integrazioni abilitate dall'utente (es. Open Banking, dove previsto dalla legge)</li>
+        </ul>
+
+        <h3>3.4 Dati tecnici</h3>
+        <p>Per garantire il funzionamento e la sicurezza del Servizio, raccogliamo:</p>
+        <ul>
+            <li>Log di sistema e crash report</li>
+            <li>Informazioni sul dispositivo e versione dell'App</li>
+            <li>Indirizzo IP (in forma anonimizzata dove possibile)</li>
+            <li>Eventi di sicurezza (accessi, modifiche account)</li>
+        </ul>
+
+        <h3>3.5 Dati di utilizzo (Consigliato)</h3>
+        <p>Solo se espressamente autorizzato dall'utente, raccogliamo dati di utilizzo in forma aggregata e anonimizzata per migliorare l'App.</p>
+
+        <h3>3.6 Preferenze di marketing (Consigliato)</h3>
+        <p>Solo se espressamente autorizzato, l'utente può ricevere comunicazioni commerciali, newsletter e aggiornamenti sul Servizio.</p>
+
+        <h2>4. Finalità e basi giuridiche del trattamento</h2>
+        
+        <h3>4.1 Esecuzione del contratto (Art. 6.1.b GDPR)</h3>
+        <ul>
+            <li>Creazione e gestione dell'account utente</li>
+            <li>Erogazione delle funzionalità core dell'App</li>
+            <li>Gestione degli abbonamenti e delle funzionalità premium</li>
+        </ul>
+
+        <h3>4.2 Obblighi di legge (Art. 6.1.c GDPR)</h3>
+        <ul>
+            <li>Adempimenti contabili e fiscali, se e quando applicabili</li>
+            <li>Risposta a richieste delle autorità competenti</li>
+        </ul>
+
+        <h3>4.3 Legittimo interesse (Art. 6.1.f GDPR)</h3>
+        <ul>
+            <li>Sicurezza del Servizio e prevenzione frodi</li>
+            <li>Miglioramento dell'App basato su analisi aggregate</li>
+            <li>Difesa in giudizio dei diritti del Titolare</li>
+        </ul>
+
+        <h3>4.4 Consenso (Art. 6.1.a GDPR)</h3>
+        <ul>
+            <li>Invio di comunicazioni di marketing</li>
+            <li>Raccolta di dati di utilizzo per analytics, dove richiesto</li>
+        </ul>
+
+        <h2>5. Condivisione e fornitori (responsabili del trattamento)</h2>
+        <p>I dati personali possono essere condivisi con i seguenti fornitori di servizi, che agiscono come responsabili del trattamento:</p>
+        <ul>
+            <li><strong>Google Firebase/Google Cloud:</strong> autenticazione (Firebase Auth), database (Firestore), funzioni serverless (Cloud Functions/Cloud Run), logging</li>
+            <li><strong>RevenueCat:</strong> gestione stato abbonamenti e entitlements</li>
+            <li><strong>Google Play Store / Apple App Store:</strong> elaborazione pagamenti e gestione abbonamenti</li>
+            <li>Altri eventuali fornitori terzi, sempre vincolati da accordi di trattamento dati (DPA) e misure di sicurezza adeguate</li>
+        </ul>
+
+        <h2>6. Trasferimenti extra-UE</h2>
+        <p>Alcuni dei nostri fornitori di servizi possono trasferire dati al di fuori dello Spazio Economico Europeo. In tali casi, garantiamo che i trasferimenti avvengano sulla base di:</p>
+        <ul>
+            <li>Clausole Contrattuali Standard (SCC) approvate dalla Commissione Europea</li>
+            <li>UK International Data Transfer Agreement (IDTA) per il Regno Unito</li>
+            <li>Misure supplementari appropriate, ove necessario</li>
+        </ul>
+
+        <h2>7. Conservazione dei dati</h2>
+        <p>I dati personali sono conservati per tutto il periodo in cui l'account utente rimane attivo. Su richiesta dell'utente, procederemo alla cancellazione o anonimizzazione dei dati, salvo l'esistenza di obblighi legali di conservazione (es. obblighi fiscali, contenziosi pendenti).</p>
+
+        <h2>8. Sicurezza</h2>
+        <p>Adottiamo misure tecniche e organizzative appropriate per proteggere i dati personali, tra cui:</p>
+        <ul>
+            <li>Controlli di accesso basati sul principio del minimo privilegio</li>
+            <li>Cifratura dei dati in transito (TLS/SSL)</li>
+            <li>Audit log per il monitoraggio degli accessi</li>
+            <li>Firebase App Check per la protezione dell'API</li>
+            <li>Regole di sicurezza Firestore con segregazione per uid utente</li>
+        </ul>
+
+        <h2>9. Diritti dell'interessato</h2>
+        <p>In conformità al GDPR e alle normative applicabili, l'utente ha diritto di:</p>
+        <ul>
+            <li><strong>Accesso:</strong> ottenere conferma e copia dei propri dati personali</li>
+            <li><strong>Rettifica:</strong> correggere dati inesatti o incompleti</li>
+            <li><strong>Cancellazione:</strong> richiedere la cancellazione dei propri dati ("diritto all'oblio")</li>
+            <li><strong>Limitazione:</strong> limitare il trattamento in determinate circostanze</li>
+            <li><strong>Portabilità:</strong> ricevere i propri dati in formato strutturato e trasferirli ad altro titolare</li>
+            <li><strong>Opposizione:</strong> opporsi al trattamento basato sul legittimo interesse</li>
+            <li><strong>Revoca del consenso:</strong> revocare in qualsiasi momento il consenso precedentemente prestato</li>
+            <li><strong>Reclamo:</strong> presentare reclamo all'autorità di controllo competente (in Italia: Garante per la protezione dei dati personali)</li>
+        </ul>
+        <p>Per esercitare i propri diritti, contattare il Titolare agli indirizzi indicati sopra.</p>
+
+        <h2>10. Gestione consensi "Consigliato"</h2>
+        <p>L'utente può modificare in qualsiasi momento i consensi "Consigliato" (marketing e analytics) dalla sezione <strong>Privacy & Consensi</strong> nell'App e/o tramite link di disiscrizione nelle email promozionali.</p>
+
+        <h2>11. Minori</h2>
+        <p>L'App non è destinata a minori di età. Se ritieni che un minore abbia fornito dati, contattaci per la rimozione.</p>
+
+        <h2>12. Reclami</h2>
+        <p>Se applicabile, l'utente può presentare reclamo all'autorità competente per la protezione dei dati.</p>
+
+        <h2>13. Aggiornamenti della presente informativa</h2>
+        <p>Potremmo aggiornare questa informativa. Indicheremo sempre data e versione. In caso di modifiche rilevanti, informeremo gli utenti con un avviso in App e/o email di servizio.</p>
+
+        <h2>14. Monetizzazione e protezione dei dati finanziari</h2>
+        <p><strong>È espressamente vietata la cessione o vendita di dati finanziari personali identificabili a terze parti per finalità pubblicitarie.</strong></p>
+        <p>Potremo utilizzare o condividere esclusivamente statistiche aggregate e completamente de-identificate, nel rispetto della normativa vigente e con meccanismi di opt-out dove richiesto dalla legge.</p>
+
+        <h2>15. Contatti</h2>
+        <p>Per qualsiasi domanda o richiesta relativa alla privacy, contattare:</p>
+        <div class="controller-box">
+            <strong>Carlo Uva</strong>
+            Email: <a href="mailto:uva.carlo@libero.it">uva.carlo@libero.it</a><br>
+            PEC: <a href="mailto:carlouva@legalmail.it">carlouva@legalmail.it</a>
+        </div>
+
+        <p class="footer-note">
+            Versione: 2026-01 | Fink Personal
+        </p>
     </div>
 </body>
 </html>
