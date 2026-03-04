@@ -108,10 +108,26 @@
             color: #666;
             text-align: center;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f0f4ff;
+            font-weight: 600;
+        }
         @media (max-width: 600px) {
             h1 { font-size: 24px; }
             h2 { font-size: 18px; }
             nav { flex-direction: column; align-items: center; gap: 8px; }
+            table { font-size: 13px; }
+            th, td { padding: 6px 8px; }
         }
     </style>
 </head>
@@ -123,7 +139,7 @@
 
     <div class="container">
         <h1>Informativa Privacy – Fink Personal</h1>
-        <p class="effective-date">Ultimo aggiornamento: Gennaio 2026 – Versione: 2026-01</p>
+        <p class="effective-date">Ultimo aggiornamento: Marzo 2026 – Versione: 2026-03</p>
 
         <div class="controller-box">
             <strong>Titolare del trattamento dei dati:</strong>
@@ -135,6 +151,13 @@
 
         <h2>1. Ambito di applicazione</h2>
         <p>La presente Informativa sulla Privacy descrive le modalità di raccolta, utilizzo, conservazione e protezione dei dati personali degli utenti che utilizzano l'applicazione mobile "Fink Personal" (di seguito "App" o "Servizio"). L'Informativa si applica a tutti i servizi offerti tramite l'App, incluse le funzionalità gratuite e premium.</p>
+        <p>L'App è disponibile a livello globale. La presente informativa è conforme alle seguenti normative:</p>
+        <ul>
+            <li><strong>GDPR</strong> (Regolamento UE 2016/679) — Unione Europea</li>
+            <li><strong>UK GDPR</strong> (Data Protection Act 2018) — Regno Unito</li>
+            <li><strong>UAE PDPL</strong> (Federal Decree-Law No. 45/2021) — Emirati Arabi Uniti</li>
+            <li><strong>CCPA / CPRA</strong> (California Consumer Privacy Act, come modificato dal California Privacy Rights Act) — California, USA</li>
+        </ul>
 
         <h2>2. Definizioni</h2>
         <ul>
@@ -147,7 +170,7 @@
         </ul>
 
         <h2>3. Dati trattati</h2>
-        
+
         <h3>3.1 Dati di account e identificazione</h3>
         <p>Raccogliamo i seguenti dati per la creazione e gestione dell'account:</p>
         <ul>
@@ -160,7 +183,7 @@
         </ul>
 
         <h3>3.2 Credenziali di accesso</h3>
-        <p>Le credenziali di autenticazione sono gestite tramite Firebase Authentication di Google. Non memorizziamo mai password in chiaro nei nostri sistemi.</p>
+        <p>Le credenziali di autenticazione sono gestite tramite Firebase Authentication di Google. Le password sono sottoposte a hashing con algoritmi crittografici standard del settore (bcrypt/scrypt) prima della memorizzazione. Non memorizziamo mai password in chiaro nei nostri sistemi.</p>
 
         <h3>3.3 Dati finanziari</h3>
         <p>L'utente può inserire volontariamente dati finanziari, tra cui:</p>
@@ -174,10 +197,11 @@
         <h3>3.4 Dati tecnici</h3>
         <p>Per garantire il funzionamento e la sicurezza del Servizio, raccogliamo:</p>
         <ul>
-            <li>Log di sistema e crash report</li>
+            <li>Log di sistema e crash report (tramite <strong>Sentry</strong>)</li>
             <li>Informazioni sul dispositivo e versione dell'App</li>
             <li>Indirizzo IP (in forma anonimizzata dove possibile)</li>
             <li>Eventi di sicurezza (accessi, modifiche account)</li>
+            <li>Dati di utilizzo aggregati (tramite <strong>Firebase Analytics</strong>), solo se autorizzato dall'utente</li>
         </ul>
 
         <h3>3.5 Dati di utilizzo (Consigliato)</h3>
@@ -187,7 +211,7 @@
         <p>Solo se espressamente autorizzato, l'utente può ricevere comunicazioni commerciali, newsletter e aggiornamenti sul Servizio.</p>
 
         <h2>4. Finalità e basi giuridiche del trattamento</h2>
-        
+
         <h3>4.1 Esecuzione del contratto (Art. 6.1.b GDPR)</h3>
         <ul>
             <li>Creazione e gestione dell'account utente</li>
@@ -217,9 +241,12 @@
         <h2>5. Condivisione e fornitori (responsabili del trattamento)</h2>
         <p>I dati personali possono essere condivisi con i seguenti fornitori di servizi, che agiscono come responsabili del trattamento:</p>
         <ul>
-            <li><strong>Google Firebase/Google Cloud:</strong> autenticazione (Firebase Auth), database (Firestore), funzioni serverless (Cloud Functions/Cloud Run), logging</li>
+            <li><strong>Google Firebase / Google Cloud:</strong> autenticazione (Firebase Auth), database (Firestore), funzioni serverless (Cloud Functions/Cloud Run), logging</li>
+            <li><strong>Firebase Analytics (Google):</strong> analisi di utilizzo aggregata (solo se autorizzato dall'utente)</li>
             <li><strong>RevenueCat:</strong> gestione stato abbonamenti e entitlements</li>
             <li><strong>Google Play Store / Apple App Store:</strong> elaborazione pagamenti e gestione abbonamenti</li>
+            <li><strong>Sentry (Functional Software):</strong> monitoraggio errori e crash reporting</li>
+            <li><strong>Anthropic (Claude AI):</strong> assistente AI e analisi documenti (i dati inviati sono limitati al minimo necessario e non vengono utilizzati per addestrare modelli)</li>
             <li>Altri eventuali fornitori terzi, sempre vincolati da accordi di trattamento dati (DPA) e misure di sicurezza adeguate</li>
         </ul>
 
@@ -232,7 +259,46 @@
         </ul>
 
         <h2>7. Conservazione dei dati</h2>
-        <p>I dati personali sono conservati per tutto il periodo in cui l'account utente rimane attivo. Su richiesta dell'utente, procederemo alla cancellazione o anonimizzazione dei dati, salvo l'esistenza di obblighi legali di conservazione (es. obblighi fiscali, contenziosi pendenti).</p>
+        <p>I dati personali sono conservati secondo le seguenti tempistiche:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria di dati</th>
+                    <th>Periodo di conservazione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dati dell'account</td>
+                    <td>Per tutta la durata dell'account attivo + 30 giorni di grazia dopo la richiesta di cancellazione</td>
+                </tr>
+                <tr>
+                    <td>Dati finanziari</td>
+                    <td>Per tutta la durata dell'account attivo; cancellati con l'account</td>
+                </tr>
+                <tr>
+                    <td>Dati fiscali e contabili</td>
+                    <td>10 anni dalla chiusura dell'account (obbligo legale italiano, art. 2220 c.c.)</td>
+                </tr>
+                <tr>
+                    <td>Log di sicurezza</td>
+                    <td>12 mesi dalla generazione</td>
+                </tr>
+                <tr>
+                    <td>Crash report (Sentry)</td>
+                    <td>90 giorni</td>
+                </tr>
+                <tr>
+                    <td>Dati di analytics</td>
+                    <td>26 mesi (impostazione Firebase Analytics)</td>
+                </tr>
+                <tr>
+                    <td>Dati di marketing</td>
+                    <td>Fino alla revoca del consenso</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Alla scadenza del periodo di conservazione, i dati vengono cancellati o anonimizzati in modo irreversibile, salvo obblighi legali di conservazione.</p>
 
         <h2>8. Sicurezza</h2>
         <p>Adottiamo misure tecniche e organizzative appropriate per proteggere i dati personali, tra cui:</p>
@@ -244,7 +310,7 @@
             <li>Regole di sicurezza Firestore con segregazione per uid utente</li>
         </ul>
 
-        <h2>9. Diritti dell'interessato</h2>
+        <h2>9. Diritti dell'interessato (GDPR / UK GDPR)</h2>
         <p>In conformità al GDPR e alle normative applicabili, l'utente ha diritto di:</p>
         <ul>
             <li><strong>Accesso:</strong> ottenere conferma e copia dei propri dati personali</li>
@@ -254,27 +320,57 @@
             <li><strong>Portabilità:</strong> ricevere i propri dati in formato strutturato e trasferirli ad altro titolare</li>
             <li><strong>Opposizione:</strong> opporsi al trattamento basato sul legittimo interesse</li>
             <li><strong>Revoca del consenso:</strong> revocare in qualsiasi momento il consenso precedentemente prestato</li>
-            <li><strong>Reclamo:</strong> presentare reclamo all'autorità di controllo competente (in Italia: Garante per la protezione dei dati personali)</li>
+            <li><strong>Reclamo:</strong> presentare reclamo all'autorità di controllo competente</li>
         </ul>
         <p>Per esercitare i propri diritti, contattare il Titolare agli indirizzi indicati sopra.</p>
 
-        <h2>10. Gestione consensi "Consigliato"</h2>
+        <h2>10. Diritti degli utenti in California (CCPA / CPRA)</h2>
+        <p>Se l'utente risiede in California, ai sensi del California Consumer Privacy Act (CCPA) come modificato dal California Privacy Rights Act (CPRA), ha diritto a:</p>
+        <ul>
+            <li><strong>Diritto di sapere:</strong> richiedere informazioni sulle categorie e i dati personali specifici raccolti</li>
+            <li><strong>Diritto di cancellazione:</strong> richiedere la cancellazione dei propri dati personali</li>
+            <li><strong>Diritto di correzione:</strong> richiedere la correzione di dati personali inesatti</li>
+            <li><strong>Diritto di opt-out dalla vendita:</strong> Fink Personal <strong>non vende</strong> dati personali e non li condivide per pubblicità comportamentale cross-context</li>
+            <li><strong>Diritto alla non discriminazione:</strong> non subirai alcuna discriminazione per aver esercitato i tuoi diritti</li>
+        </ul>
+        <p>Per esercitare questi diritti, contattare <a href="mailto:uva.carlo@libero.it">uva.carlo@libero.it</a>. Le richieste verranno evase entro 45 giorni.</p>
+
+        <h2>11. Diritti degli utenti negli Emirati Arabi Uniti (UAE PDPL)</h2>
+        <p>Se l'utente risiede negli Emirati Arabi Uniti, ai sensi del Federal Decree-Law No. 45/2021 (UAE Personal Data Protection Law), ha diritto a:</p>
+        <ul>
+            <li><strong>Accesso e copia:</strong> richiedere l'accesso ai propri dati personali</li>
+            <li><strong>Rettifica:</strong> richiedere la correzione di dati inesatti</li>
+            <li><strong>Cancellazione:</strong> richiedere la cancellazione dei dati quando non più necessari</li>
+            <li><strong>Limitazione:</strong> richiedere la limitazione del trattamento</li>
+            <li><strong>Reclamo:</strong> presentare reclamo presso l'UAE Data Office</li>
+        </ul>
+        <p>Il trattamento dei dati è effettuato sulla base del consenso dell'utente e/o dell'esecuzione del contratto. I dati possono essere trasferiti al di fuori degli Emirati Arabi Uniti verso paesi che garantiscono un livello adeguato di protezione dei dati o sulla base di adeguate garanzie contrattuali.</p>
+
+        <h2>12. Gestione consensi "Consigliato"</h2>
         <p>L'utente può modificare in qualsiasi momento i consensi "Consigliato" (marketing e analytics) dalla sezione <strong>Privacy & Consensi</strong> nell'App e/o tramite link di disiscrizione nelle email promozionali.</p>
 
-        <h2>11. Minori</h2>
-        <p>L'App non è destinata a minori di età. Se ritieni che un minore abbia fornito dati, contattaci per la rimozione.</p>
+        <h2>13. Minori</h2>
+        <p>L'App è destinata esclusivamente a utenti maggiorenni (18 anni o più). Non raccogliamo consapevolmente dati personali di minori di 18 anni.</p>
+        <p>Se il Titolare viene a conoscenza di aver raccolto dati di un minore, provvederà alla cancellazione entro <strong>72 ore</strong> dalla scoperta e notificherà l'utente o il tutore legale.</p>
 
-        <h2>12. Reclami</h2>
-        <p>Se applicabile, l'utente può presentare reclamo all'autorità competente per la protezione dei dati.</p>
+        <h2>14. Reclami</h2>
+        <p>L'utente può presentare reclamo all'autorità di controllo competente per la protezione dei dati personali:</p>
+        <ul>
+            <li><strong>Italia:</strong> Garante per la protezione dei dati personali — <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a></li>
+            <li><strong>Regno Unito:</strong> Information Commissioner's Office (ICO) — <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a></li>
+            <li><strong>UAE:</strong> UAE Data Office — <a href="https://www.uaedataoffice.ae" target="_blank" rel="noopener">www.uaedataoffice.ae</a></li>
+            <li><strong>California (USA):</strong> California Attorney General — <a href="https://oag.ca.gov/privacy" target="_blank" rel="noopener">oag.ca.gov/privacy</a></li>
+            <li><strong>Altro paese UE:</strong> l'autorità di protezione dati del proprio Stato membro di residenza</li>
+        </ul>
 
-        <h2>13. Aggiornamenti della presente informativa</h2>
+        <h2>15. Aggiornamenti della presente informativa</h2>
         <p>Potremmo aggiornare questa informativa. Indicheremo sempre data e versione. In caso di modifiche rilevanti, informeremo gli utenti con un avviso in App e/o email di servizio.</p>
 
-        <h2>14. Monetizzazione e protezione dei dati finanziari</h2>
+        <h2>16. Monetizzazione e protezione dei dati finanziari</h2>
         <p><strong>È espressamente vietata la cessione o vendita di dati finanziari personali identificabili a terze parti per finalità pubblicitarie.</strong></p>
         <p>Potremo utilizzare o condividere esclusivamente statistiche aggregate e completamente de-identificate, nel rispetto della normativa vigente e con meccanismi di opt-out dove richiesto dalla legge.</p>
 
-        <h2>15. Contatti</h2>
+        <h2>17. Contatti</h2>
         <p>Per qualsiasi domanda o richiesta relativa alla privacy, contattare:</p>
         <div class="controller-box">
             <strong>Carlo Uva</strong>
@@ -283,7 +379,7 @@
         </div>
 
         <p class="footer-note">
-            Versione: 2026-01 | Fink Personal
+            Versione: 2026-03 | Fink Personal
         </p>
     </div>
 </body>

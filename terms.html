@@ -96,6 +96,20 @@
             margin: 24px 0;
             border-radius: 0 8px 8px 0;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: #f0f4ff;
+            font-weight: 600;
+        }
         .footer-note {
             margin-top: 48px;
             padding-top: 24px;
@@ -108,6 +122,8 @@
             h1 { font-size: 24px; }
             h2 { font-size: 18px; }
             nav { flex-direction: column; align-items: center; gap: 8px; }
+            table { font-size: 13px; }
+            th, td { padding: 6px 8px; }
         }
     </style>
 </head>
@@ -119,73 +135,210 @@
 
     <div class="container">
         <h1>Termini di utilizzo – Fink Personal</h1>
-        <p class="effective-date">Ultimo aggiornamento: Gennaio 2026 – Versione: 2026-01</p>
+        <p class="effective-date">Ultimo aggiornamento: Marzo 2026 – Versione: 2026-03</p>
 
-        <h2>1. Oggetto</h2>
-        <p>Fink Personal è un'applicazione di gestione e organizzazione di informazioni finanziarie personali.</p>
-        <div class="warning-box">
-            <strong>AVVERTENZA IMPORTANTE</strong><br>
-            Fink Personal <strong>NON</strong> fornisce consulenza finanziaria, fiscale, legale o d'investimento. Le informazioni hanno finalità esclusivamente informative e organizzative.
-        </div>
+        <h2>1. Definizioni</h2>
+        <ul>
+            <li><strong>"App" o "Servizio":</strong> l'applicazione mobile Fink Personal, incluse tutte le sue funzionalità gratuite e a pagamento.</li>
+            <li><strong>"Titolare":</strong> Carlo Uva, titolare e sviluppatore dell'App.</li>
+            <li><strong>"Utente":</strong> qualsiasi persona fisica che accede all'App o crea un account.</li>
+            <li><strong>"Account":</strong> l'insieme di credenziali e dati associati alla registrazione dell'Utente.</li>
+            <li><strong>"Piano Free":</strong> il piano gratuito con funzionalità limitate.</li>
+            <li><strong>"Piano Pro":</strong> il piano a pagamento con funzionalità estese.</li>
+            <li><strong>"Contenuti dell'Utente":</strong> tutti i dati, informazioni e materiali inseriti dall'Utente nell'App.</li>
+        </ul>
 
         <h2>2. Accettazione</h2>
-        <p>Creando un account o usando l'App, l'utente dichiara di aver letto e accettato:</p>
+        <p>Creando un account o utilizzando l'App, l'Utente dichiara di:</p>
         <ul>
-            <li>questi Termini di utilizzo</li>
-            <li>l'Informativa Privacy</li>
+            <li>aver letto, compreso e accettato integralmente i presenti Termini di utilizzo</li>
+            <li>aver letto e accettato l'<a href="/fink-personal-privacy/">Informativa Privacy</a></li>
+            <li>avere almeno 18 anni di età</li>
+            <li>avere la capacità giuridica di vincolarsi ai presenti Termini</li>
+        </ul>
+        <p>Se l'Utente non accetta i presenti Termini, non deve utilizzare l'App né creare un account.</p>
+
+        <h2>3. Descrizione del Servizio</h2>
+        <p>Fink Personal è un'applicazione di gestione e organizzazione di informazioni finanziarie personali. L'App consente agli utenti di:</p>
+        <ul>
+            <li>registrare e categorizzare entrate e spese</li>
+            <li>gestire conti e patrimonio immobiliare</li>
+            <li>visualizzare stime fiscali indicative (sistema fiscale italiano)</li>
+            <li>collegare conti bancari tramite Open Banking (ove disponibile)</li>
+            <li>utilizzare un assistente AI per l'analisi di documenti e dati finanziari</li>
+            <li>esportare i propri dati in formato strutturato</li>
         </ul>
 
-        <h2>3. Requisiti e account</h2>
-        <p>L'utente garantisce che i dati forniti sono accurati e che custodirà le credenziali con cura.</p>
-        <p>L'utente è responsabile delle attività svolte tramite il proprio account.</p>
+        <div class="warning-box">
+            <strong>AVVERTENZA IMPORTANTE</strong><br>
+            Fink Personal <strong>NON</strong> è un commercialista, un consulente fiscale o un consulente finanziario. L'App <strong>NON</strong> fornisce consulenza finanziaria, fiscale, legale o d'investimento di alcun tipo.<br><br>
+            Le informazioni, le stime e i calcoli presentati dall'App hanno finalità <strong>esclusivamente informative e organizzative</strong>. L'Utente è tenuto a consultare professionisti qualificati per qualsiasi decisione finanziaria, fiscale o di investimento.<br><br>
+            Le stime fiscali sono basate su aliquote e regole pubblicamente disponibili e possono essere imprecise, incomplete o non aggiornate. Il Titolare <strong>non garantisce</strong> l'accuratezza, la completezza o l'attualità di tali informazioni.
+        </div>
 
-        <h2>4. Uso consentito e divieti</h2>
-        <p>È vietato:</p>
+        <h2>4. Account</h2>
+
+        <h3>4.1 Registrazione</h3>
+        <p>Per utilizzare l'App, l'Utente deve creare un account fornendo informazioni accurate e complete. L'Utente si impegna ad aggiornare tempestivamente i propri dati in caso di variazioni.</p>
+
+        <h3>4.2 Sicurezza dell'account</h3>
+        <p>L'Utente è responsabile della custodia delle proprie credenziali di accesso e di tutte le attività svolte tramite il proprio account. In caso di accesso non autorizzato, l'Utente deve notificare immediatamente il Titolare.</p>
+
+        <h3>4.3 Un account per persona</h3>
+        <p>Ogni persona fisica può possedere un solo account. La creazione di account multipli può comportare la sospensione o la chiusura degli account duplicati.</p>
+
+        <h2>5. Piani e Abbonamenti</h2>
+
+        <h3>5.1 Piano Free</h3>
+        <p>L'App offre un piano gratuito con le seguenti limitazioni:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Funzionalità</th>
+                    <th>Limite Free</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Immobili</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Conti</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Storico calendario</td>
+                    <td>3 mesi</td>
+                </tr>
+                <tr>
+                    <td>Richieste AI al giorno</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Veicoli</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Connessioni bancarie</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>5.2 Piano Pro</h3>
+        <p>Il Piano Pro rimuove tutte le limitazioni del Piano Free e offre accesso illimitato a tutte le funzionalità dell'App. Il Piano Pro è disponibile con le seguenti opzioni di abbonamento:</p>
         <ul>
-            <li>accedere ai dati di altri utenti</li>
-            <li>tentare di eludere sistemi di sicurezza, anti-abuso o di pagamento</li>
-            <li>caricare contenuti illeciti o violare diritti di terzi</li>
-            <li>utilizzare l'App per frodi o attività illegali</li>
+            <li><strong>Mensile</strong> (<code>pro_monthly</code>)</li>
+            <li><strong>Annuale</strong> (<code>pro_yearly</code>)</li>
+        </ul>
+        <p>I prezzi esatti sono sempre mostrati nell'App prima dell'acquisto e possono variare in base al paese e alla valuta dell'utente.</p>
+
+        <h3>5.3 Fatturazione e rinnovi</h3>
+        <ul>
+            <li>La gestione dei pagamenti avviene esclusivamente tramite Apple App Store o Google Play Store</li>
+            <li>Gli abbonamenti si rinnovano automaticamente alla scadenza del periodo corrente, salvo disdetta da parte dell'Utente</li>
+            <li>Le funzionalità premium sono abilitate solo dopo verifica server-side dell'acquisto valido tramite RevenueCat</li>
+            <li>L'Utente può gestire o annullare il proprio abbonamento dalle impostazioni del proprio store (Apple/Google)</li>
         </ul>
 
-        <h2>5. Funzionalità e terze parti</h2>
-        <p>Alcune funzionalità possono dipendere da servizi terzi (es. open banking). L'uso di tali servizi è soggetto anche ai loro termini. Il Titolare non controlla piattaforme terze.</p>
+        <h3>5.4 Rimborsi</h3>
+        <p>Eventuali rimborsi seguono le politiche dello store attraverso cui è stato effettuato l'acquisto (Apple App Store o Google Play Store). Il Titolare non gestisce direttamente i rimborsi.</p>
 
-        <h2>6. Piani a pagamento, fatturazione e rinnovi</h2>
-        <p>Se l'App offre piani a pagamento:</p>
+        <h2>6. Limitazione di responsabilità</h2>
+
+        <div class="warning-box">
+            <strong>AVVERTENZA</strong><br>
+            Fink Personal <strong>NON</strong> è un commercialista, un consulente fiscale o un consulente finanziario. L'App fornisce strumenti organizzativi e informazioni indicative, <strong>non consulenza professionale</strong>.
+        </div>
+
+        <p>Nei limiti massimi consentiti dalla legge applicabile:</p>
         <ul>
-            <li>prezzi e durata sono mostrati prima dell'acquisto</li>
-            <li>la gestione pagamenti avviene tramite gli store (Apple/Google) o provider autorizzati</li>
-            <li>le funzionalità premium sono abilitate solo dopo verifica server-side dell'acquisto valido</li>
+            <li>il Titolare <strong>non è responsabile</strong> di decisioni economiche, fiscali, finanziarie o di investimento prese dall'Utente basandosi su informazioni, stime o calcoli forniti dall'App</li>
+            <li>il Titolare <strong>non garantisce</strong> l'accuratezza, la completezza o l'attualità delle stime fiscali, dei calcoli o delle informazioni finanziarie presentate</li>
+            <li>l'Utente utilizza l'App e le informazioni in essa contenute sotto la propria ed esclusiva responsabilità</li>
+            <li>il Titolare <strong>non è responsabile</strong> per danni indiretti, incidentali, speciali, consequenziali o punitivi derivanti dall'utilizzo o dall'impossibilità di utilizzare l'App</li>
+            <li>la responsabilità complessiva del Titolare, ove applicabile, è limitata all'importo effettivamente pagato dall'Utente nei 12 mesi precedenti l'evento che ha dato origine alla responsabilità</li>
         </ul>
-        <p>Eventuali rimborsi e gestione abbonamenti seguono le regole dello store e le policy applicabili.</p>
+        <p>Per utenti consumatori nell'Unione Europea e nel Regno Unito, restano fermi i diritti inderogabili previsti dalle leggi applicabili a tutela dei consumatori. Nessuna disposizione dei presenti Termini limita o esclude la responsabilità per dolo, colpa grave o per danni alla persona.</p>
 
-        <h2>7. Disponibilità del servizio</h2>
-        <p>L'App può essere aggiornata, modificata o temporaneamente sospesa per manutenzione o sicurezza. Il Titolare si impegna a ridurre disservizi, ma non garantisce continuità assoluta.</p>
-
-        <h2>8. Limitazione di responsabilità</h2>
-        <p>Nei limiti consentiti dalla legge:</p>
+        <h2>7. Uso consentito e divieti</h2>
+        <p>L'Utente si impegna a utilizzare l'App in conformità alla legge e ai presenti Termini. È espressamente vietato:</p>
         <ul>
-            <li>il Titolare non è responsabile di decisioni economiche/fiscali prese dall'utente basandosi su informazioni dell'App</li>
-            <li>l'utente utilizza l'App sotto la propria responsabilità</li>
+            <li>accedere ai dati di altri utenti o tentare di farlo</li>
+            <li>tentare di eludere, disabilitare o aggirare sistemi di sicurezza, anti-abuso, di pagamento o di verifica degli abbonamenti</li>
+            <li>effettuare reverse engineering, decompilare o disassemblare l'App</li>
+            <li>caricare contenuti illeciti, diffamatori o che violino diritti di terzi</li>
+            <li>utilizzare l'App per frodi, riciclaggio o altre attività illegali</li>
+            <li>utilizzare bot, scraper o sistemi automatizzati per accedere all'App</li>
+            <li>rivendere, sublicenziare o ridistribuire l'accesso all'App o ai suoi contenuti</li>
         </ul>
-        <p>Per utenti consumatori in UE/UK restano fermi i diritti inderogabili previsti dalle leggi applicabili.</p>
+
+        <h2>8. Funzionalità e servizi di terze parti</h2>
+        <p>Alcune funzionalità dell'App possono dipendere da servizi di terze parti, tra cui:</p>
+        <ul>
+            <li><strong>Open Banking:</strong> collegamento conti bancari tramite fornitori autorizzati</li>
+            <li><strong>Assistente AI:</strong> analisi e suggerimenti basati su modelli di intelligenza artificiale</li>
+            <li><strong>Store (Apple/Google):</strong> gestione pagamenti e abbonamenti</li>
+        </ul>
+        <p>L'uso di tali servizi è soggetto anche ai rispettivi termini e condizioni. Il Titolare non controlla le piattaforme di terze parti e non è responsabile per eventuali disservizi, modifiche o interruzioni da parte loro.</p>
 
         <h2>9. Proprietà intellettuale</h2>
-        <p>Marchi, codice, UI e contenuti dell'App sono protetti. È vietata la riproduzione non autorizzata.</p>
+        <p>Tutti i diritti di proprietà intellettuale relativi all'App, inclusi marchi, codice sorgente, interfaccia utente (UI/UX), design, documentazione e contenuti originali, sono di proprietà esclusiva del Titolare o dei rispettivi licenzianti.</p>
+        <p>È vietata la riproduzione, distribuzione, modifica o utilizzo non autorizzato di qualsiasi contenuto dell'App.</p>
+        <p>L'Utente conserva la piena proprietà dei propri Contenuti inseriti nell'App. Concede al Titolare una licenza limitata, non esclusiva e revocabile per il trattamento dei dati necessario all'erogazione del Servizio.</p>
 
-        <h2>10. Chiusura account e sospensione</h2>
-        <p>Il Titolare può sospendere o chiudere account in caso di violazioni, abuso o rischi di sicurezza.</p>
-        <p>L'utente può richiedere cancellazione account secondo le modalità in App/Privacy Policy.</p>
-
-        <h2>11. Legge applicabile e foro</h2>
-        <p>Salvo norme inderogabili a tutela dei consumatori:</p>
+        <h2>10. Disponibilità del servizio</h2>
+        <p>Il Titolare si impegna a fornire il Servizio con ragionevole continuità, ma non garantisce la disponibilità ininterrotta dell'App. L'App può essere temporaneamente sospesa per:</p>
         <ul>
-            <li>legge applicabile: italiana</li>
-            <li>foro competente: Trani (o diverso foro previsto da norme consumatori)</li>
+            <li>manutenzione programmata o straordinaria</li>
+            <li>aggiornamenti e miglioramenti</li>
+            <li>ragioni di sicurezza</li>
+            <li>cause di forza maggiore</li>
+        </ul>
+        <p>Il Titolare si riserva il diritto di modificare, aggiornare o interrompere funzionalità dell'App, con ragionevole preavviso ove possibile.</p>
+
+        <h2>11. Chiusura account e sospensione</h2>
+
+        <h3>11.1 Da parte del Titolare</h3>
+        <p>Il Titolare può sospendere o chiudere un account in caso di:</p>
+        <ul>
+            <li>violazione dei presenti Termini</li>
+            <li>attività fraudolenta o abusiva</li>
+            <li>rischi per la sicurezza del Servizio o di altri utenti</li>
+            <li>inattività prolungata (superiore a 24 mesi)</li>
         </ul>
 
-        <h2>12. Contatti</h2>
+        <h3>11.2 Da parte dell'Utente</h3>
+        <p>L'Utente può richiedere la cancellazione del proprio account in qualsiasi momento tramite le apposite funzionalità nell'App o contattando il Titolare. La cancellazione prevede un periodo di grazia di 30 giorni, durante il quale l'Utente può annullare la richiesta effettuando un nuovo accesso.</p>
+        <p>Per maggiori dettagli sulla cancellazione dei dati, consultare l'<a href="/fink-personal-privacy/">Informativa Privacy</a>.</p>
+
+        <h2>12. Modifiche ai Termini</h2>
+        <p>Il Titolare si riserva il diritto di modificare i presenti Termini. In caso di modifiche rilevanti:</p>
+        <ul>
+            <li>l'Utente sarà informato tramite notifica in App e/o email di servizio con almeno 30 giorni di anticipo</li>
+            <li>l'uso continuato dell'App dopo l'entrata in vigore delle modifiche costituisce accettazione dei nuovi Termini</li>
+            <li>se l'Utente non accetta le modifiche, può chiudere il proprio account prima dell'entrata in vigore</li>
+        </ul>
+
+        <h2>13. Legge applicabile e foro competente</h2>
+        <p>Salvo norme inderogabili a tutela dei consumatori:</p>
+        <ul>
+            <li><strong>Legge applicabile:</strong> i presenti Termini sono regolati dalla legge italiana</li>
+            <li><strong>Foro competente:</strong> Tribunale di Trani (BT), Italia</li>
+        </ul>
+        <p>Per gli utenti consumatori residenti nell'Unione Europea, si applica il foro del luogo di residenza del consumatore, ai sensi del Regolamento UE 1215/2012. Per i consumatori nel Regno Unito, si applicano le disposizioni del Consumer Rights Act 2015.</p>
+        <p>La Commissione Europea mette a disposizione una piattaforma per la risoluzione delle controversie online (ODR), accessibile all'indirizzo: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>.</p>
+
+        <h2>14. Disposizioni generali</h2>
+        <ul>
+            <li><strong>Clausola di separabilità:</strong> se una disposizione dei presenti Termini risulta invalida o inapplicabile, le restanti disposizioni rimangono valide ed efficaci.</li>
+            <li><strong>Rinuncia:</strong> il mancato esercizio di un diritto da parte del Titolare non costituisce rinuncia a tale diritto.</li>
+            <li><strong>Cessione:</strong> l'Utente non può cedere i propri diritti od obblighi derivanti dai presenti Termini senza il previo consenso scritto del Titolare.</li>
+            <li><strong>Integralità:</strong> i presenti Termini, unitamente all'Informativa Privacy, costituiscono l'intero accordo tra l'Utente e il Titolare in relazione all'uso dell'App.</li>
+        </ul>
+
+        <h2>15. Contatti</h2>
         <p>Per qualsiasi domanda sui presenti Termini di utilizzo:</p>
         <div class="info-box">
             <strong>Carlo Uva</strong><br>
@@ -194,7 +347,7 @@
         </div>
 
         <p class="footer-note">
-            Versione: 2026-01 | Fink Personal
+            Versione: 2026-03 | Fink Personal
         </p>
     </div>
 </body>
